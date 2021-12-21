@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<style>
+  body{
+    background-image: url(/media/back.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    width:100%;
+    height:100%;
+    background-attachment:fixed;
+    background-position:center center;
+  }
+</style>
+<h3 style="color: white;">Panel de control</h3>
+<hr>
+
+<p style="color: white;">
+Bienvenido, <small>{{request.user.username}}</small></p>
+<hr>
+
+<a class = "btn btn-success" href="{% url 'article:addarticle'%}">Agregar artículo</a>
+<hr>
+
+
+{% if articles %}
+
+<table class="table" >
+  <thead>
+    <tr style="color: white;">
+      <th scope="col">Id</th>
+      <th scope="col">Título</th>
+      <th scope="col">Publicado por</th>
+      <th scope="col">Creación</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+
+
+  {% for article in  articles %}
+  <tr>
+    <th style="color: white;" scope="row">{{article.id}} </th>
+        <td><a style="color: white;"  href="{% url 'article:detail' article.id %}">{{article.title}}</a></td>
+        <td style="color: white;" >{{article.author}}</td>
+        <td style="color: white;">{{article.created_date}}</td>
+        <td ><a href="{% url 'article:update' article.id %}" class = "btn btn-primary">Modificar</a></td>
+        <td><a href="{% url 'article:delete' article.id %}" class = "btn btn-danger">Borrar</a></td>
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% else %}
+
+<div class = "alert alert-danger">Aún no has publicado ningún artículo</div>
+{% endif %}
+
+
+
+{% endblock  %}
+
+{% block bg %}
+
+
+{% endblock bg %}

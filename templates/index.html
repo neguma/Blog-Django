@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+
+{% block body %}
+
+<style>
+    body{
+    background-image: none;
+    background-image: url(/media/kedi.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    width:100%;
+    height:100%;
+    background-attachment:fixed;
+    background-position:center center;}
+
+    }
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+
+</style>
+
+{% endblock body %}
+
+
+{% block bg %}
+
+<div class = "banner-text" style="width:60%" >
+
+    <h5 style="font-size:4.5vw;color:white;">Bienvenido</h5><br>
+    <p style="color:white">Es esta página encontrarás artículos, notas y música. Podrás agregar, modificar o eliminar cada uno.</p>
+</div>
+
+{% endblock  %}
