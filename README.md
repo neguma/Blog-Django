@@ -13,7 +13,7 @@ En la sección de artículos hay un cajón de comentarios funcional. Cada artíc
 
 # CLONAR REPOSITORIO
 
-git clone https://github.com/neguma/Entrega1-GUMA
+git clone https://github.com/neguma/Blog-Django
 
 # INSTALAR REQUISITOS
 
