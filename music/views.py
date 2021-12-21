@@ -66,6 +66,3 @@ def delete(request,id):
             return redirect("music:dashboard")
         else :
             return render(request,"musicdetail.html",{"music " : music})
-
-def life(request):
-    return render(request,"life.html")

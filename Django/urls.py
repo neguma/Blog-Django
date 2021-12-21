@@ -13,7 +13,6 @@ urlpatterns = [
     path('articles/',include("article.urls")),
     path('user/',include("user.urls")),
     path('notes/',include("note.urls")),
-    path('life/',views.life,name='life'),
     path('music/',include("music.urls")),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
