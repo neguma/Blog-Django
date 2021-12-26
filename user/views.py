@@ -3,7 +3,7 @@ from django.http import request
 from django.shortcuts import render,redirect
 from . import forms
 from django.contrib import messages
-
+from .forms import EditarUsuarioForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate, logout
 from django.contrib.auth.decorators import login_required
@@ -71,3 +71,28 @@ def logout_user(request):
 def dashboard(request):
     return render(request,"general.html")
 
+@login_required
+def editar_user(request):
+    
+    usuario = request.user
+    
+    if request.method == 'POST':
+        form = EditarUsuarioForm(request.POST)
+        
+        if form.is_valid():
+            
+            datos = form.cleaned_data
+            
+            usuario.email = datos['email']
+            usuario.password1 = datos['password1']
+            usuario.password2 = datos['password2']
+            usuario.last_name = datos['last_name']
+            usuario.first_name = datos['first_name']
+            
+            usuario.save()
+            
+            return render(request, 'index.html', {'tiene_mensaje': True, 'mensaje': f'Se edito correctamente.' })
+    else:
+        form = EditarUsuarioForm(initial={'first_name': usuario.first_name, 'last_name': usuario.last_name, 'email': usuario.email})
+    
+    return render(request, 'edit.html', {'form': form})
