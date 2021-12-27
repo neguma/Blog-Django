@@ -82,12 +82,11 @@ def editar_user(request):
         form = EditarUsuarioForm(request.POST)
 
         if form.is_valid():
-            data = form.cleaned_data
-            newUser.email = data['email']
-            newUser.password1 = data['password1']
-            newUser.password2 = data['password2']
-            newUser.last_name = data['last_name']
-            newUser.first_name = data['first_name']
+            newUser.email = form.cleaned_data.get('email')
+            newUser.password1 = form.cleaned_data.get('password1')
+            newUser.password2 = form.cleaned_data.get('password2')
+            newUser.last_name = form.cleaned_data.get('last_name')
+            newUser.first_name = form.cleaned_data.get('first_name')
 
             newUser.save()
 

@@ -35,7 +35,6 @@ class LoginForm(forms.Form):
 
 
 class EditarUsuarioForm(UserCreationForm):
-    username = forms.CharField(label="Usuario")
     email = forms.EmailField(label='Editar Email')
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(
