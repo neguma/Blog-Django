@@ -14,7 +14,7 @@ En la sección de artículos hay un cajón de comentarios funcional. Cada artíc
 # CLONAR REPOSITORIO
 
 1. git clone https://github.com/neguma/Blog-Django
-2. cd django-blog
+2. cd blog-django
 
 # CREAR ENTORNO VIRTUAL
 
