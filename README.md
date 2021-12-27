@@ -13,8 +13,8 @@ En la sección de artículos hay un cajón de comentarios funcional. Cada artíc
 
 # CLONAR REPOSITORIO
 
-1. git clone https://github.com/neguma/Blog-Django
-2. cd blog-django
+1. $ git clone https://github.com/neguma/Blog-Django
+2. $ cd blog-django
 
 # CREAR ENTORNO VIRTUAL
 
@@ -23,7 +23,7 @@ En la sección de artículos hay un cajón de comentarios funcional. Cada artíc
 
 # INSTALAR REQUISITOS
 
-pip install -r requirements.txt
+   $ pip install -r requirements.txt
 
 # MIGRAR DB
 
@@ -32,12 +32,13 @@ pip install -r requirements.txt
 
 # CREAR SUPERUSER
 
-1. py manage.py createsuperuser
+1. $ py manage.py createsuperuser
 2. Completar con los datos requeridos
 
 # INICIAR SERVIDOR
 
-py manage.py runserver
+   $ py manage.py runserver
+   
 El servidor debería iniciarse en la dirección http://127.0.0.1:8000/
 Para acceder al panel de admin, http://127.0.0.1:8000/admin
 
