@@ -3,7 +3,7 @@ from django.http import request
 from django.shortcuts import render, redirect
 from . import forms
 from django.contrib import messages
-from .forms import EditarUsuarioForm
+from .forms import UserEditForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
@@ -79,7 +79,7 @@ def editar_user(request):
     newUser = User.objects.get(username=request.user)
 
     if request.method == 'POST':
-        form = EditarUsuarioForm(request.POST)
+        form = UserEditForm(request.POST)
 
         if form.is_valid():
             newUser.email = form.cleaned_data.get('email')
@@ -92,6 +92,6 @@ def editar_user(request):
 
             return render(request, 'index.html')
     else:
-        form = EditarUsuarioForm(initial={'first_name': newUser.first_name, 'last_name': newUser.last_name, 'email': newUser.email})
+        form = UserEditForm(initial={'first_name': newUser.first_name, 'last_name': newUser.last_name, 'email': newUser.email})
 
     return render(request, 'edit.html', {'form': form})

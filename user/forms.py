@@ -34,7 +34,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(label="Contraseña", widget=PasswordInput)
 
 
-class EditarUsuarioForm(UserCreationForm):
+class UserEditForm(UserCreationForm):
     email = forms.EmailField(label='Editar Email')
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(
