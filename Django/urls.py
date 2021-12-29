@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
-from article import views as articleViews
-from note import views as noteViews
+from article import views
+from note import views
 from music import views
 from django.conf import settings
 from django.conf.urls.static import static
